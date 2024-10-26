@@ -12,7 +12,6 @@ class PasswordGenerator:
         self.root.geometry("600x700")
         self.root.resizable(False, False)
         
-        # Style configuration
         self.style = ttk.Style()
         self.style.configure('TCheckbutton', font=('Arial', 10))
         self.style.configure('TButton', font=('Arial', 10, 'bold'))
@@ -20,16 +19,13 @@ class PasswordGenerator:
         self.create_widgets()
         
     def create_widgets(self):
-        # Main frame
         main_frame = ttk.Frame(self.root, padding="20")
         main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
         
-        # Title
         title_label = ttk.Label(main_frame, text="Password Generator", 
                               font=('Arial', 16, 'bold'))
         title_label.grid(row=0, column=0, columnspan=2, pady=10)
         
-        # Password length frame
         length_frame = ttk.LabelFrame(main_frame, text="Password Length", 
                                     padding="10")
         length_frame.grid(row=1, column=0, columnspan=2, sticky='ew', pady=10)
@@ -43,7 +39,6 @@ class PasswordGenerator:
                                variable=self.length_var, orient='horizontal')
         length_scale.grid(row=0, column=1, sticky='ew', padx=5)
         
-        # Character sets frame
         chars_frame = ttk.LabelFrame(main_frame, text="Character Sets", 
                                    padding="10")
         chars_frame.grid(row=2, column=0, columnspan=2, sticky='ew', pady=10)
